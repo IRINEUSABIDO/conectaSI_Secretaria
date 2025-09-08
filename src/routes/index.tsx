@@ -14,15 +14,15 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
   return (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row h-screen">
         <div className=" bg-light-gray">
           <img
-            className="border-solid border-6 border-header-blue py-7 px-2"
+            className="border-r-4 border-solid border-header-blue py-7 px-2"
             src={logoPrefeitura}
             alt="Logo"
           />
 
-          <div className="border-r-7 border-font-gray-2 h-screen">
+          <div className="border-r-4 border-t-4 border-font-gray-2 h-screen">
             <div className="border-b-2 border-font-gray-2 py-2">
               <a href="" className="ml-2 font-inter font-medium ">
                 Ordens de serviço
@@ -35,7 +35,7 @@ function RouteComponent() {
               </a>
             </div>
 
-            <div className="border-b-4 border-font-gray-2 py-2">
+            <div className="border-b-2 border-font-gray-2 py-2">
               <a href="" className="ml-2 font-inter font-medium ">
                 Relatório
               </a>
