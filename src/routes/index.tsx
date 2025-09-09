@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "../components/footer";
-
+import { SimplePopUp } from "../components/simplePopUp";
+import NovasOrdens from "../assets/icons/novasordens.png";
+import OrdensExecucao from "../assets/icons/ordensEmExecuçao.png";
+import OrdemFinalizada from "../assets/icons/ordensFinalizadas.png";
 export const Route = createFileRoute("/")({
   component: RouteComponent,
 });
@@ -33,9 +36,9 @@ function RouteComponent() {
         {/* main */}
         <main className="w-screen flex-grow flex flex-col justify-evenly border-8 border-yellow-800">
           <div className="border-8 border-green-500 grow flex justify-evenly items-center">
-            <div className="border-4">Nova Ordem de Serviço</div>
-            <div className="border-4">Ordem em execução</div>
-            <div className="border-4">Ordens Finalizadas</div>
+            <div className=""><SimplePopUp title="Novas Ordens de Serviços" alt="icone prancheta" src={NovasOrdens}/> </div>
+            <div className=""><SimplePopUp title="Ordens em execução" alt="icone seta pra cima" src={OrdensExecucao}/> </div>
+            <div className=""><SimplePopUp title="Ordens Finalizadas" alt="icone de finalizada" src={OrdemFinalizada}/> </div>
           </div>
           <div className="border-8 border-red-600 grow flex justify-evenly items-center">
             <div className="border-4 ">Ordens de Serviço</div>
