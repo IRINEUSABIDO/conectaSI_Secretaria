@@ -45,7 +45,7 @@ function RouteComponent() {
                 </h2>
               </div>
               <div className="ml-[130px]">
-                <h2 className="text-4xl font-inter font-light text-header-blue">
+                <h2 className="text-4xl font-inter font-light h1text-header-blue">
                   <em>SEINFRA</em>
                 </h2>
               </div>
