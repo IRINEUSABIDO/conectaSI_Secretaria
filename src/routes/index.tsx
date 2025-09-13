@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "../components/footer";
 import { SimplePopUp } from "../components/simplePopUp";
+import { PopUpOrdens } from "../components/popUpOrdens";
 import novasOrdens from "../assets/icons/novasordens.png";
 import ordensExecucao from "../assets/icons/ordensEmExecuçao.png";
 import ordemFinalizada from "../assets/icons/ordensFinalizadas.png";
@@ -13,7 +14,7 @@ function RouteComponent() {
   return (
     <>
       {/* div suprema */}
-      <div className="flex border-8 h-auto border-b-blue-600">
+      <div className="flex border-8 min-h-screen h-auto border-b-blue-600">
         {/* div principal da sidebar*/}
         <div className="flex-1/12 flex flex-col bg-light-gray">
           {/*logo*/}
@@ -25,7 +26,7 @@ function RouteComponent() {
             />
           </div>
           {/*o resto (provavelmente vai ser link depois) */}
-          <div className="flex-4/5 border-r-5 border-t-4 border-solid border-font-gray-2">
+          <div className="flex-4/5  border-r-5 border-t-4 border-solid border-font-gray-2">
             <p className="pl-2 font-inter font-medium border-b-2 border-font-gray-2 py-2">
               Ordens de serviço
             </p>
@@ -59,13 +60,36 @@ function RouteComponent() {
           {/* main */}
           <main className="flex-grow flex flex-col max-h-full border-8 border-yellow-800">
             {/* Popups*/}
-            <div className="flex justify-center gap-4 min-w-0 min-h-0 border-8">
-              <SimplePopUp title="Novas Ordens de Serviços" src={novasOrdens}></SimplePopUp>
-              <SimplePopUp title="Ordens em execução"></SimplePopUp>
-              <SimplePopUp title="Novas Ordens de Serviços"></SimplePopUp>
+            <div className="flex justify-center gap-4 min-w-0 h-auto border-8">
+              <SimplePopUp
+                title="Novas Ordens de Serviços"
+                src={novasOrdens}
+              ></SimplePopUp>
+              <SimplePopUp
+                title="Ordens em execução"
+                src={ordensExecucao}
+              ></SimplePopUp>
+              <SimplePopUp
+                title="Novas Ordens de Serviços"
+                src={novasOrdens}
+              ></SimplePopUp>
             </div>
-            <div className="flex justify-center items-center border-8 border-fuchsia-950 grow">
-              <div className="bg-light-gray pb-90">aaaaa</div>
+            <div className="flex justify-center items-center border-8 border-fuchsia-950 grow relative">
+              <div className="bg-light-gray pb-90"></div>
+
+              {/* popups debaixo com as ultimas ordens */}
+              <div className="absolute top-0 left-0">
+                <div className=" bg-header-blue flex justify-start items-start p-3 pr-48 m-4 rounded-2xl text-2xl font-bold text-white">
+                  Últimas Ordens
+                </div>
+                 <PopUpOrdens
+                categoria="MACACO FILHA DA PUTA"
+                local="o quarto do filha da puta que criou essa merda"
+                problema="fogo no cu do desgraçado"
+                data_solicitacao="asdadsasdasdasdadsasd"
+                data_conclusao="FGNSDFB tgyfv   "
+              />
+              </div>
             </div>
           </main>
         </div>
