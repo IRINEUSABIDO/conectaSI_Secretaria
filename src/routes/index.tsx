@@ -14,7 +14,7 @@ function RouteComponent() {
   return (
     <>
       {/* div suprema */}
-      <div className="flex border-8 min-h-screen h-auto border-b-blue-600">
+      <div className="flex min-h-screen h-auto border-b-blue-600">
         {/* div principal da sidebar*/}
         <div className="flex-1/12 flex flex-col bg-light-gray">
           {/*logo*/}
@@ -46,7 +46,7 @@ function RouteComponent() {
                 </h2>
               </div>
               <div className="ml-[130px]">
-                <h2 className="text-4xl font-inter font-light h1text-header-blue">
+                <h2 className="text-4xl font-inter font-light h1 text-header-blue">
                   <em>SEINFRA</em>
                 </h2>
               </div>
@@ -58,9 +58,9 @@ function RouteComponent() {
             </div>
           </header>
           {/* main */}
-          <main className="flex-grow flex flex-col max-h-full border-8 border-yellow-800">
+          <main className="flex-grow flex flex-col max-h-full border-yellow-800">
             {/* Popups*/}
-            <div className="flex justify-center gap-4 min-w-0 h-auto border-8">
+            <div className="flex items-center flex-grow justify-center gap-4 min-w-0 h-auto">
               <SimplePopUp
                 title="Novas Ordens de Serviços"
                 src={novasOrdens}
@@ -70,25 +70,42 @@ function RouteComponent() {
                 src={ordensExecucao}
               ></SimplePopUp>
               <SimplePopUp
-                title="Novas Ordens de Serviços"
+                title="Ordens Finalizadas"
                 src={novasOrdens}
               ></SimplePopUp>
             </div>
-            <div className="flex justify-center items-center border-8 border-fuchsia-950 grow relative">
+            <div className="flex justify-center items-center border-fuchsia-950 grow relative">
               <div className="bg-light-gray pb-90"></div>
 
               {/* popups debaixo com as ultimas ordens */}
-              <div className="absolute top-0 left-0">
-                <div className=" bg-header-blue flex justify-start items-start p-3 pr-48 m-4 rounded-2xl text-2xl font-bold text-white">
+              <div className="bg-light-gray flex flex-col justify-center rounded-3xl w-[95%]">
+                <div className=" bg-header-blue flex justify-start max-w-fit items-start p-3 pr-48 m-4 rounded-2xl text-2xl font-bold text-white">
                   Últimas Ordens
                 </div>
-                 <PopUpOrdens
-                categoria="MACACO FILHA DA PUTA"
-                local="o quarto do filha da puta que criou essa merda"
-                problema="fogo no cu do desgraçado"
-                data_solicitacao="asdadsasdasdasdadsasd"
-                data_conclusao="FGNSDFB tgyfv   "
-              />
+                <div className="flex justify-evenly gap-4">
+                  <PopUpOrdens
+                    categoria="a"
+                    local="s"
+                    problema="faaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    data_solicitacao="d"
+                    data_conclusao="AAAAAAAAAA"
+                  />
+                  <PopUpOrdens
+                    categoria="a"
+                    local="s"
+                    problema="f"
+                    data_solicitacao="d"
+                    data_conclusao="AAAAAAAAAA"
+                  />
+                  <PopUpOrdens
+                    categoria="a"
+                    local="s"
+                    problema="f"
+                    data_solicitacao="d"
+                    data_conclusao="AAAAAAAAAA"
+                  />
+                  
+                </div>
               </div>
             </div>
           </main>
