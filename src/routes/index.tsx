@@ -1,117 +1,83 @@
-import { createFileRoute} from "@tanstack/react-router"; // adicionar o import no redirect depois
-// import Cookie from "../utils/Cookies";    mesma coisa com esse cookie
+import { createFileRoute } from "@tanstack/react-router";
+
+import { Button } from "../components/button";
+import { Header } from "../components/header";
+import { Footer } from "../components/footer";
+import { Title } from "../components/title";
+
+import logoPrefeitura from "../assets/logo.avif";
+import novaOrdem from "../assets/svgs/novaOrden.svg";
+import ordensEmAndamento from "../assets/svgs/ordensEmAndamento.svg";
+import ordensConcluidas from "../assets/svgs/ordensConcluidas.svg";
+import ultimasOrdens from "../assets/svgs/ultimaOrden.svg";
 
 export const Route = createFileRoute("/")({
-  //  codigo por pra redirecionar se n tiver login,
-  //  comentado por enquanto pq so 1 pessoa tem o codigo do backend
-  //  beforeLoad: () => {
-  //   const login = Cookie.getCookie("login");
-  //   if (!login) {
-  //     throw redirect({ to: "/login" });
-  //   }
-  // },
   component: RouteComponent,
 });
-import { Footer } from "../components/footer";
-import { Header } from "../components/header";
-import { Title } from "../components/title";
-import Logo from "../assets/logoPrefeitura.png";
-import adicionar_icon from "../assets/icons/+.png";
-import teclado_icon from "../assets/icons/teclado.png";
 
 function RouteComponent() {
   return (
     <>
-      <header>
-        <div className="bg-light-gray">
-          <img
-            src={Logo}
-            alt="logo da prefeitura HEADER"
-            className="w-[190px]"
-          />
-          <Header title=" " />
-        </div>
-      </header>
-
-      <main>
-        <div className="flex items-center justify-center bg-dark-gray text-light-gray h-screen">
-          <div className="columns-1">
-            <Title />
-
-            <div className="rounded-2xl bg-light-gray flex items-center space-x-16 ">
-              <button
-                type="button"
-                className="px-9 py-4 text-header-blue font-inter font-semibold"
-              >
-                <h1>
-                  Novas Ordens de Serviço
-                </h1>
-              </button>
-              <img
-                src={adicionar_icon}
-                alt="Opção Index +"
-                className="w-[10px]"
-              />
-            </div>
-
-            <br />
-
-            <div className="rounded-2xl bg-light-gray flex items-center space-x-16">
-              {" "}
-              <button
-                type="button"
-                className="px-9 py-4 text-header-blue font-inter font-semibold"
-              >
-                <h1>
-                  OS em Andamento
-                </h1>
-              </button>
-              <img
-                src={adicionar_icon}
-                alt="Opção Index +"
-                className="w-[10px]"
-              />
-            </div>
-
-            <br />
-
-            <div className="rounded-2xl bg-light-gray flex items-center space-x-18 ">
-              {" "}
-              <button
-                type="button"
-                className="px-9 py-4 text-header-blue font-inter font-semibold"
-              >
-                <h1>OS Concluídas</h1>
-              </button>
-              <img
-                src={teclado_icon}
-                alt="Opção Index teclado"
-                className="w-[25px]"
-              />
-            </div>
-
-                <br/>
-            <div className="rounded-2xl bg-light-gray flex items-center space-x-16">
-              {" "}
-              <button
-                type="button"
-                className="px-9 py-4 text-header-blue font-inter font-semibold"
-              >
-                <h1>
-                  Histórico das OS
-                </h1>
-              </button>
-              <img
-                src={adicionar_icon}
-                alt="Opção Index +"
-                className="w-[10px]"
-              />
-            </div>
+      {/* div suprema */}
+      <div
+        className="flex flex-col border-8 
+      "
+      >
+        {/* header */}
+        <header>
+          <div className="bg-light-gray">
+            <img src={logoPrefeitura} alt="logo da prefeitura HEADER" />
+            <Header />
+          </div>
+        </header>
+        {/* o resto */}
+        <div className="flex gap-6 flex-col justify-center col h-screen items-center bg-bg-gray">
+          <div className="mb-4">
+            <Title></Title>
+          </div>
+          <div className=" w-[320px]">
+            <Button
+              title="Novas Ordens"
+              redirect="/"
+              src={novaOrdem}
+              alt="pedrinho"
+            />
+          </div>
+          <div className=" w-[320px]">
+            <Button
+              title="Ordens em andamento"
+              redirect="/"
+              src={ordensEmAndamento}
+              alt="pedrinho"
+            />
+          </div>
+          <div className=" w-[320px]">
+            <Button
+              title="Ordens Concluídas"
+              redirect="/"
+              src={ordensConcluidas}
+              alt="pedrinho"
+            />
+          </div>
+          <div className="w-[320px]">
+            <Button
+              title="Últimas Ordens"
+              redirect="/"
+              src={ultimasOrdens}
+              alt="pedrinho"
+            />
+          </div>
+          <div className="w-[320px]">
+            <Button
+              title="Relatório"
+              redirect="/"
+              src={novaOrdem}
+              alt="pedrinho"
+            />
           </div>
         </div>
-      </main>
-
-      <Footer hasLogo={false} />
+        <Footer hasLogo={false}></Footer>
+      </div>
     </>
   );
 }
