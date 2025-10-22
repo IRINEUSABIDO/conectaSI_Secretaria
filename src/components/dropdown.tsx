@@ -6,11 +6,10 @@ import { Dropdown_Select_Button } from "./dropdownButton";
 
 interface Props {
   title: string;
-  opcao1: string;
-  opcao2: string;
-  opcao3: string;
-  opcao4: string;
-  opcao5: string;
+  opcao1?: string;
+  opcao2?: string;
+  opcao3?: string;
+  opcao4?: string;
 }
 
 export const Dropdown_Select = ({
@@ -19,7 +18,6 @@ export const Dropdown_Select = ({
   opcao2,
   opcao3,
   opcao4,
-  opcao5,
 }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [indexSelecionado, setIndexSelecionado] = useState<number | null>(null);
@@ -48,7 +46,7 @@ export const Dropdown_Select = ({
       {/* Quando o usuário clicar no chevron, vai chamar esse bloco que contém as opções  */}
       {isOpen && (
         <div className="absolute top-full z-50 mt-2 w-full flex flex-col items-center space-y-2">
-          {[opcao1, opcao2, opcao3, opcao4, opcao5].map((opcao, index) => (
+          {[opcao1, opcao2, opcao3, opcao4].map((opcao, index) => (
             <div
               key={index}
               className="w-full flex items-center justify-between bg-white py-3 px-4 rounded-xl shadow-xl shadow-gray-400 cursor-pointer text-header-blue font-bold"
