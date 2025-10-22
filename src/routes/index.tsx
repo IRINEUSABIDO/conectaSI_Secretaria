@@ -74,7 +74,7 @@ function RouteComponent() {
           <div className="w-[320px]">
             <Button
               title="Relatório"
-              redirect="/"
+              redirect="/relatorio/"
               src={novaOrdem}
               alt="pedrinho"
             />
