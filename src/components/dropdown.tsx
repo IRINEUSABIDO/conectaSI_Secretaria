@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import chevron_up from "../assets/icons/Chevron_Up.png";
 import chevron_down from "../assets/icons/Chevron_Down.png";
 import { Dropdown_Select_Button } from "./dropdownButton";
@@ -25,11 +24,6 @@ export const Dropdown_Select = ({
   const click = () => {
     setIsOpen((prev) => !prev);
   };
-
-  useEffect(() => {
-    const savedIndex = localStorage.getItem(title); 
-    if (savedIndex !== null) setIndexSelecionado(parseInt(savedIndex, 10));
-  }, [title]);
 
   return (
     <div className="relative z-10 rounded-2xl bg-light-gray flex flex-col items-center justify-center p-4 pr-2 mr- w-[365px]">
@@ -57,8 +51,10 @@ export const Dropdown_Select = ({
               className="w-full flex items-center justify-between bg-white py-3 px-4 rounded-xl shadow-xl shadow-gray-400 cursor-pointer text-header-blue font-bold"
               onClick={() => {
                 setIndexSelecionado(index);
-                localStorage.setItem(title, index.toString());
-              }}
+                if (opcao !== undefined) {
+                  localStorage.setItem(title, opcao);
+              }
+	}}
             >
               <span className="">{opcao}</span>
               <Dropdown_Select_Button selected={indexSelecionado === index} />
