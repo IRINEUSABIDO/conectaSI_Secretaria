@@ -53,8 +53,8 @@ export const Dropdown_Select = ({
                 setIndexSelecionado(index);
                 if (opcao !== undefined) {
                   localStorage.setItem(title, opcao);
-              }
-	}}
+                }
+              }}
             >
               <span className="">{opcao}</span>
               <Dropdown_Select_Button selected={indexSelecionado === index} />

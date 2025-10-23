@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RelatorioRouteImport } from './routes/relatorio'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as Index3RouteImport } from './routes/index3'
+import { Route as CadastroRouteImport } from './routes/cadastro'
 import { Route as IndexRouteImport } from './routes/index'
 
 const RelatorioRoute = RelatorioRouteImport.update({
@@ -18,9 +20,19 @@ const RelatorioRoute = RelatorioRouteImport.update({
   path: '/relatorio',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Index3Route = Index3RouteImport.update({
   id: '/index3',
   path: '/index3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CadastroRoute = CadastroRouteImport.update({
+  id: '/cadastro',
+  path: '/cadastro',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,31 +43,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cadastro': typeof CadastroRoute
   '/index3': typeof Index3Route
+  '/login': typeof LoginRoute
   '/relatorio': typeof RelatorioRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cadastro': typeof CadastroRoute
   '/index3': typeof Index3Route
+  '/login': typeof LoginRoute
   '/relatorio': typeof RelatorioRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cadastro': typeof CadastroRoute
   '/index3': typeof Index3Route
+  '/login': typeof LoginRoute
   '/relatorio': typeof RelatorioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/index3' | '/relatorio'
+  fullPaths: '/' | '/cadastro' | '/index3' | '/login' | '/relatorio'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/index3' | '/relatorio'
-  id: '__root__' | '/' | '/index3' | '/relatorio'
+  to: '/' | '/cadastro' | '/index3' | '/login' | '/relatorio'
+  id: '__root__' | '/' | '/cadastro' | '/index3' | '/login' | '/relatorio'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CadastroRoute: typeof CadastroRoute
   Index3Route: typeof Index3Route
+  LoginRoute: typeof LoginRoute
   RelatorioRoute: typeof RelatorioRoute
 }
 
@@ -68,11 +88,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RelatorioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/index3': {
       id: '/index3'
       path: '/index3'
       fullPath: '/index3'
       preLoaderRoute: typeof Index3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro': {
+      id: '/cadastro'
+      path: '/cadastro'
+      fullPath: '/cadastro'
+      preLoaderRoute: typeof CadastroRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,7 +121,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CadastroRoute: CadastroRoute,
   Index3Route: Index3Route,
+  LoginRoute: LoginRoute,
   RelatorioRoute: RelatorioRoute,
 }
 export const routeTree = rootRouteImport

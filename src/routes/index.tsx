@@ -4,6 +4,7 @@ import { Button } from "../components/button";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { Title } from "../components/title";
+import { Tela_Solicitacao } from "../components/solicitacao"
 
 import logoPrefeitura from "../assets/logo.avif";
 import novaOrdem from "../assets/svgs/novaOrden.svg";
@@ -14,6 +15,24 @@ import ultimasOrdens from "../assets/svgs/ultimaOrden.svg";
 export const Route = createFileRoute("/")({
   component: RouteComponent,
 });
+
+const teste = [
+  {
+    categoria: "luz",
+    local: "11 de novembro",
+    problema: "caiu a luz aq doido",
+    solicitacao: "21/08/2025",
+    conclusao: "04/09/2025",
+  },
+  {
+    categoria: "rua",
+    local: "11 de novembro",
+    problema: "rua ta toda cheia de buraco",
+    solicitacao: "21/08/2025",
+    conclusao: "04/09/2025",
+  },
+];
+
 
 function RouteComponent() {
   return (
@@ -28,10 +47,11 @@ function RouteComponent() {
           <div className="bg-light-gray">
             <img src={logoPrefeitura} alt="logo da prefeitura HEADER" />
             <Header />
+
           </div>
         </header>
         {/* o resto */}
-        <div className="flex gap-6 flex-col justify-center col h-screen items-center bg-bg-gray">
+        <div className="flex gap-6 flex-col justify-center col min-h-screen h-auto items-center bg-bg-gray">
           <div className="mb-4">
             <Title></Title>
           </div>
@@ -67,6 +87,19 @@ function RouteComponent() {
               alt="pedrinho"
             />
           </div>
+						{ <div>
+          {teste.map((dado) => (
+            <Tela_Solicitacao
+              categoria={dado.categoria}
+              local={dado.local}
+              problema={dado.problema}
+              solicitacao={dado.solicitacao}
+              conclusao={dado.conclusao}
+            />
+          ))}
+        </div> }
+
+
           <div className="w-[320px]">
             <Button
               title="Relatório"
@@ -75,6 +108,15 @@ function RouteComponent() {
               alt="pedrinho"
             />
           </div>
+	 <div className="w-[320px]">
+            <Button
+              title="Últimas Ordens"
+              redirect="/login"
+              src={ultimasOrdens}
+              alt="pedrinho"
+            />
+          </div>
+
         </div>
         <Footer hasLogo={false}></Footer>
       </div>
