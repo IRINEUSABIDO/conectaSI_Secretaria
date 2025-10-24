@@ -48,7 +48,7 @@ function RouteComponent() {
           <div className=" w-[320px]">
             <Button
               title="Ordens em andamento"
-              redirect="/"
+              redirect="/ordensAndamento"
               src={ordensEmAndamento}
               alt="pedrinho"
             />
