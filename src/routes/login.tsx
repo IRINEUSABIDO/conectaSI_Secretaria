@@ -39,7 +39,9 @@ function RouteComponent() {
 
         <main className="h-screen bg-dark-gray flex items-center justify-center min-h-200">
           <div className="columns-1">
+            <div className="mb-[15%]">
             <Title />
+            </div>
             <FormProvider {...methods}>
               <form onSubmit={handleSubmit(onSubmit)}>
                 {/* form do cpf  */}

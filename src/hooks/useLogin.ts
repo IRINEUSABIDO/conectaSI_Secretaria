@@ -1,7 +1,7 @@
-import { userLoginType } from "../services/zodSchemas";
+import type { userLoginType } from "../services/zodSchemas";
 
 import { login } from "../services/api/axios";
-import Cookie from "../utils/Cookies";
+import Cookie from "../utils/Cookies.ts";
 
 import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";

@@ -17,7 +17,10 @@ import credencias from "../assets/icons/credenciais.png";
 
 import teclado from "../assets/icons/teclado.png";
 import { Footer } from "../components/footer";
-import { userRegisterSchema, userRegisterType } from "../services/zodSchemas";
+import {
+  userRegisterSchema,
+  type userRegisterType,
+} from "../services/zodSchemas";
 
 export const Route = createFileRoute("/cadastro")({
   component: RouteComponent,
@@ -39,8 +42,9 @@ function RouteComponent() {
         <Header title="CADASTRE-SE" />
         <div className="flex justify-center items-center bg-dark-gray text-light-gray h-screen min-h-200">
           <div className="columns-1">
-            <Title />
-
+            <div className="mb-[15%]">
+              <Title />
+            </div>
             <main>
               <FormProvider {...methods}>
                 <form onSubmit={handleSubmit(onSubmit)}>

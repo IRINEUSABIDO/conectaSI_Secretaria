@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 
 import { register } from "../services/api/axios";
-import { userRegisterType } from "../services/zodSchemas";
+import type { userRegisterType } from "../services/zodSchemas";
 
 export const useRegister = () => {
   const navigate = useNavigate();
