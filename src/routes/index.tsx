@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Button } from "../components/button";
-import { EncaminhadaPopUpError } from "../components/EncaminhadaPopUpError";
-import { EncaminhadaPopUpSuccess } from "../components/EncaminhadaPopUpSuccess";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { Title } from "../components/title";
@@ -58,7 +56,7 @@ function RouteComponent() {
           <div className=" w-[320px]">
             <Button
               title="Ordens Concluídas"
-              redirect="/"
+              redirect="/ordensConcluidas"
               src={ordensConcluidas}
               alt="pedrinho"
             />
@@ -71,11 +69,20 @@ function RouteComponent() {
               alt="pedrinho"
             />
           </div>
+
           <div className="w-[320px]">
             <Button
               title="Relatório"
               redirect="/relatorio/"
               src={novaOrdem}
+              alt="pedrinho"
+            />
+          </div>
+          <div className="w-[320px]">
+            <Button
+              title="Últimas Ordens"
+              redirect="/login"
+              src={ultimasOrdens}
               alt="pedrinho"
             />
           </div>

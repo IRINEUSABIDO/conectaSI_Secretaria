@@ -5,7 +5,7 @@ interface Props {
 export function Header({ title }: Props) {
   return (
     <header className="bg-light-gray ">
-      <h1 className="text-center font-bold text-2xl text-header-blue pt-[20px]">
+      <h1 className="text-center font-bold text-2xl text-header-blue mt-[20px]">
         {title}
       </h1>
 
