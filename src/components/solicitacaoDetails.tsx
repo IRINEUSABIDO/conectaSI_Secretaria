@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { EncaminhadaPopUpSuccess } from "./EncaminhadaPopUpSuccess";
+import { EncaminhadaPopUpError } from "./EncaminhadaPopUpError";
+
 interface Props {
   alt?: string;
   src?: string;
@@ -13,8 +17,12 @@ interface Props {
 }
 
 export const SolicitacaoDetails = (props: Props) => {
+  const [openSucces, setOpenSucces] = useState(false);
+  const [openCancelled, setOpenCancelled] = useState(false);
   return (
     <div>
+        <EncaminhadaPopUpSuccess open={openSucces} onClose={() => setOpenSucces(false)}></EncaminhadaPopUpSuccess>
+        <EncaminhadaPopUpError open={openCancelled} onClose={() => setOpenCancelled(false)}></EncaminhadaPopUpError>
       <div className="h-auto max-h-[80vh] bg-light-gray rounded-2xl p-4 mb-6 mx-4">
         <div className="flex flex-col h-full gap-2 md:justify-between">
           <div className="flex justify-center">
@@ -80,7 +88,7 @@ export const SolicitacaoDetails = (props: Props) => {
             <div className="flex justify-between">
               {" "}
               <div>
-                <button className="bg-red-500 font-bold cursor-pointer text-white rounded-[4px] p-2 px-2 sm:px-10">
+                <button onClick={() => setOpenCancelled(true)} className="bg-red-500 font-bold cursor-pointer text-white rounded-[4px] p-2 px-2 sm:px-10">
                   Cancelar{" "}
                   <img
                     className="inline w-6 h-6"
@@ -91,7 +99,10 @@ export const SolicitacaoDetails = (props: Props) => {
               </div>
               <div>
                 {" "}
-                <button className="bg-green-500 font-bold cursor-pointer text-white rounded-[4px] p-2 px-2 sm:px-10">
+                <button
+                  onClick={() => setOpenSucces(true)}
+                  className="bg-green-500 font-bold cursor-pointer text-white rounded-[4px] p-2 px-2 sm:px-10"
+                >
                   Concluir{" "}
                   <img
                     className="inline w-6 h-6"
