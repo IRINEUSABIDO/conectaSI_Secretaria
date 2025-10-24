@@ -4,6 +4,10 @@
 }
 @import "tailwindcss";
 
+*{
+  font-family: var(--font-inter);
+}
+
 @theme {
   --font-inter: "Inter", sans-serif;
 
