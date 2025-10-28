@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RelatorioRouteImport } from './routes/relatorio'
 import { Route as OrdensConcluidasRouteImport } from './routes/ordensConcluidas'
+import { Route as NewLoginRouteImport } from './routes/newLogin'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as Index3RouteImport } from './routes/index3'
 import { Route as CriarContaRouteImport } from './routes/criarConta'
@@ -25,6 +26,11 @@ const RelatorioRoute = RelatorioRouteImport.update({
 const OrdensConcluidasRoute = OrdensConcluidasRouteImport.update({
   id: '/ordensConcluidas',
   path: '/ordensConcluidas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewLoginRoute = NewLoginRouteImport.update({
+  id: '/newLogin',
+  path: '/newLogin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/criarConta': typeof CriarContaRoute
   '/index3': typeof Index3Route
   '/login': typeof LoginRoute
+  '/newLogin': typeof NewLoginRoute
   '/ordensConcluidas': typeof OrdensConcluidasRoute
   '/relatorio': typeof RelatorioRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/criarConta': typeof CriarContaRoute
   '/index3': typeof Index3Route
   '/login': typeof LoginRoute
+  '/newLogin': typeof NewLoginRoute
   '/ordensConcluidas': typeof OrdensConcluidasRoute
   '/relatorio': typeof RelatorioRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/criarConta': typeof CriarContaRoute
   '/index3': typeof Index3Route
   '/login': typeof LoginRoute
+  '/newLogin': typeof NewLoginRoute
   '/ordensConcluidas': typeof OrdensConcluidasRoute
   '/relatorio': typeof RelatorioRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/criarConta'
     | '/index3'
     | '/login'
+    | '/newLogin'
     | '/ordensConcluidas'
     | '/relatorio'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/criarConta'
     | '/index3'
     | '/login'
+    | '/newLogin'
     | '/ordensConcluidas'
     | '/relatorio'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/criarConta'
     | '/index3'
     | '/login'
+    | '/newLogin'
     | '/ordensConcluidas'
     | '/relatorio'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   CriarContaRoute: typeof CriarContaRoute
   Index3Route: typeof Index3Route
   LoginRoute: typeof LoginRoute
+  NewLoginRoute: typeof NewLoginRoute
   OrdensConcluidasRoute: typeof OrdensConcluidasRoute
   RelatorioRoute: typeof RelatorioRoute
 }
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/ordensConcluidas'
       fullPath: '/ordensConcluidas'
       preLoaderRoute: typeof OrdensConcluidasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newLogin': {
+      id: '/newLogin'
+      path: '/newLogin'
+      fullPath: '/newLogin'
+      preLoaderRoute: typeof NewLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   CriarContaRoute: CriarContaRoute,
   Index3Route: Index3Route,
   LoginRoute: LoginRoute,
+  NewLoginRoute: NewLoginRoute,
   OrdensConcluidasRoute: OrdensConcluidasRoute,
   RelatorioRoute: RelatorioRoute,
 }

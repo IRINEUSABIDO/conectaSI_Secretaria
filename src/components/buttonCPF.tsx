@@ -26,7 +26,7 @@ export const Button_cpf = ({ title, placeholder, src }: Props) => {
             value={cpf}
             onChange={mudanca}
             maxLength={14}
-            className="px-18 py-4 text-header-blue font-inter font-bold cursor-pointer outline-0 "
+            className="px-22 py-4 text-header-blue font-inter font-bold cursor-pointer outline-0 "
           />
           <img src={src} className="mr-4" />
         </div>

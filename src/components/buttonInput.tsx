@@ -16,7 +16,7 @@ export const Button_Input = ({ placeholder, title, alt, src, type }: Props) => {
           <input
             type={type}
             placeholder={placeholder}
-            className="px-22 py-4 text-header-blue font-inter font-bold cursor-pointer outline-0 "
+            className="px-26 py-4 text-header-blue font-inter font-bold cursor-pointer outline-0 "
           />
           {src && <img src={src} alt={alt} className="mr-4" />}
         </div>

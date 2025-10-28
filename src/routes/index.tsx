@@ -75,8 +75,16 @@ function RouteComponent() {
           </div>
           <div className="w-[320px]">
             <Button
-              title="criar conta REMODELED"
+              title="criar conta REWORK"
               redirect="/criarConta"
+              src={ultimasOrdens}
+              alt="pedrinho"
+            />
+          </div>
+            <div className="w-[320px]">
+            <Button
+              title="login REWORK"
+              redirect="/newLogin"
               src={ultimasOrdens}
               alt="pedrinho"
             />
