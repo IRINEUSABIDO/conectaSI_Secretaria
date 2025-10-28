@@ -4,7 +4,6 @@ import { Button } from "../components/button";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { Title } from "../components/title";
-import { Tela_Solicitacao } from "../components/solicitacao"
 
 import logoPrefeitura from "../assets/logo.avif";
 import novaOrdem from "../assets/svgs/novaOrden.svg";
@@ -16,38 +15,16 @@ export const Route = createFileRoute("/")({
   component: RouteComponent,
 });
 
-const teste = [
-  {
-    categoria: "luz",
-    local: "11 de novembro",
-    problema: "caiu a luz aq doido",
-    solicitacao: "21/08/2025",
-    conclusao: "04/09/2025",
-  },
-  {
-    categoria: "rua",
-    local: "11 de novembro",
-    problema: "rua ta toda cheia de buraco",
-    solicitacao: "21/08/2025",
-    conclusao: "04/09/2025",
-  },
-];
-
-
 function RouteComponent() {
   return (
     <>
       {/* div suprema */}
-      <div
-        className="flex flex-col border-8 
-      "
-      >
+      <div className="flex flex-col">
         {/* header */}
         <header>
           <div className="bg-light-gray">
             <img src={logoPrefeitura} alt="logo da prefeitura HEADER" />
             <Header />
-
           </div>
         </header>
         {/* o resto */}
@@ -74,7 +51,7 @@ function RouteComponent() {
           <div className=" w-[320px]">
             <Button
               title="Ordens Concluídas"
-              redirect="/"
+              redirect="/ordensConcluidas"
               src={ordensConcluidas}
               alt="pedrinho"
             />
@@ -87,18 +64,6 @@ function RouteComponent() {
               alt="pedrinho"
             />
           </div>
-						{ <div>
-          {teste.map((dado) => (
-            <Tela_Solicitacao
-              categoria={dado.categoria}
-              local={dado.local}
-              problema={dado.problema}
-              solicitacao={dado.solicitacao}
-              conclusao={dado.conclusao}
-            />
-          ))}
-        </div> }
-
 
           <div className="w-[320px]">
             <Button
@@ -108,7 +73,7 @@ function RouteComponent() {
               alt="pedrinho"
             />
           </div>
-	 <div className="w-[320px]">
+          <div className="w-[320px]">
             <Button
               title="criar conta REMODELED"
               redirect="/criarConta"
@@ -116,7 +81,6 @@ function RouteComponent() {
               alt="pedrinho"
             />
           </div>
-
         </div>
         <Footer hasLogo={false}></Footer>
       </div>

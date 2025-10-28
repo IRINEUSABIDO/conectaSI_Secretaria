@@ -9,8 +9,8 @@ export const Button_Back = ({ redirect, title }: Props) => {
   return (
     <>
       <div className="flex justify-center items-center bg-bg-gray">
-        <div className="relative w-screen">
-          <div className=" ml-9 absolute m-4 text-white p-4 mr-9 cursor-pointer">
+        <div className="w-screen">
+          <div className="text-white">
             <button
               type="button"
               className="flex items-center cursor-pointer p-4"

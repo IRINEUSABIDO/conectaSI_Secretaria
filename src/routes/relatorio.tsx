@@ -49,7 +49,7 @@ function RouteComponent() {
           <Header />
         </header>
 
-        <main className="flex justify-center items-center bg-dark-gray h-screen min-h-200">
+        <main className="flex justify-center items-center bg-bg-gray h-screen min-h-200">
           <div className="columns-1">
             <Button_Back redirect="/" title="Voltar" />
             <div className="flex gap-6 flex-col  h-screen items-center bg-bg-gray">

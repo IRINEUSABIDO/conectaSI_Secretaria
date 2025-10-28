@@ -41,7 +41,7 @@ function RouteComponent() {
         </main>
 
         {/* FOOTER */}
-        <footer className="flex items-center justify-center mt-[5%] mb-[5%] space-x-14">
+        <footer className="flex items-center justify-center mt-[5%] mb-[5%] space-x-8">
         <img src={ConectaSeinfraIcon} alt="Logo do Conecta Seinfra"/>
         <img src={LogoPrefeitura} alt="Logo da Prefeitura de Nova Russas" />
         </footer>
