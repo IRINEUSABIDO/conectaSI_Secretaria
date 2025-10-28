@@ -18,7 +18,7 @@ export const Button_cpf = ({ title, placeholder }: Props) => {
             <div className="flex flex-col mb-[5%]">
                 <h1 className="font-xs font-bold text-header-blue ml-3">{title}</h1>
 
-                <div className="rounded-3xl bg-white border-2 border-header-light-blue flex items-center space-x-3 w-[90vw] sm:w-[600px]">
+                <div className="rounded-3xl focus-within:border-header-light-blue bg-white border-2 border-[#50b9c0] flex items-center space-x-3 w-[90vw] sm:w-[600px]">
                     <input
                         type="text"
                         placeholder={placeholder}
