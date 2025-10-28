@@ -25,7 +25,7 @@ export const Button_password = ({
                 <h1 className="font-xs font-bold text-header-blue ml-3">{title}</h1>
 
                 {hasPassword ? (
-                    <div className="rounded-3xl bg-white border-2 border-header-light-blue flex items-center justify-between w-[90vw] sm:w-[600px]">
+                    <div className="rounded-3xl bg-white border-2 focus-within:border-header-light-blue border-[#50b9c0] flex items-center justify-between w-[90vw] sm:w-[600px]">
                         <input
                             placeholder={placeholder}
                             type={showPassword ? "text" : "password"}
@@ -42,7 +42,7 @@ export const Button_password = ({
                         </button>
                     </div>
                 ) : (
-                    <div className="rounded-2xl bg-light-gray flex items-center">
+                    <div className="rounded-2xl focus-within:border-header-light-blue border-[#50b9c0] bg-light-gray flex items-center">
                         <input
                             placeholder={placeholder}
                             type="password"
