@@ -14,6 +14,7 @@ import { Route as OrdensConcluidasRouteImport } from './routes/ordensConcluidas'
 import { Route as NewLoginRouteImport } from './routes/newLogin'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as Index3RouteImport } from './routes/index3'
+import { Route as CriarContaSenhaRouteImport } from './routes/criarContaSenha'
 import { Route as CriarContaRouteImport } from './routes/criarConta'
 import { Route as CadastroRouteImport } from './routes/cadastro'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +44,11 @@ const Index3Route = Index3RouteImport.update({
   path: '/index3',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CriarContaSenhaRoute = CriarContaSenhaRouteImport.update({
+  id: '/criarContaSenha',
+  path: '/criarContaSenha',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CriarContaRoute = CriarContaRouteImport.update({
   id: '/criarConta',
   path: '/criarConta',
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cadastro': typeof CadastroRoute
   '/criarConta': typeof CriarContaRoute
+  '/criarContaSenha': typeof CriarContaSenhaRoute
   '/index3': typeof Index3Route
   '/login': typeof LoginRoute
   '/newLogin': typeof NewLoginRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cadastro': typeof CadastroRoute
   '/criarConta': typeof CriarContaRoute
+  '/criarContaSenha': typeof CriarContaSenhaRoute
   '/index3': typeof Index3Route
   '/login': typeof LoginRoute
   '/newLogin': typeof NewLoginRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/cadastro': typeof CadastroRoute
   '/criarConta': typeof CriarContaRoute
+  '/criarContaSenha': typeof CriarContaSenhaRoute
   '/index3': typeof Index3Route
   '/login': typeof LoginRoute
   '/newLogin': typeof NewLoginRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/cadastro'
     | '/criarConta'
+    | '/criarContaSenha'
     | '/index3'
     | '/login'
     | '/newLogin'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/cadastro'
     | '/criarConta'
+    | '/criarContaSenha'
     | '/index3'
     | '/login'
     | '/newLogin'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/cadastro'
     | '/criarConta'
+    | '/criarContaSenha'
     | '/index3'
     | '/login'
     | '/newLogin'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CadastroRoute: typeof CadastroRoute
   CriarContaRoute: typeof CriarContaRoute
+  CriarContaSenhaRoute: typeof CriarContaSenhaRoute
   Index3Route: typeof Index3Route
   LoginRoute: typeof LoginRoute
   NewLoginRoute: typeof NewLoginRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Index3RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/criarContaSenha': {
+      id: '/criarContaSenha'
+      path: '/criarContaSenha'
+      fullPath: '/criarContaSenha'
+      preLoaderRoute: typeof CriarContaSenhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/criarConta': {
       id: '/criarConta'
       path: '/criarConta'
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CadastroRoute: CadastroRoute,
   CriarContaRoute: CriarContaRoute,
+  CriarContaSenhaRoute: CriarContaSenhaRoute,
   Index3Route: Index3Route,
   LoginRoute: LoginRoute,
   NewLoginRoute: NewLoginRoute,

@@ -89,6 +89,14 @@ function RouteComponent() {
               alt="pedrinho"
             />
           </div>
+          <div className="w-[320px]">
+            <Button
+              title="criar conta: confirmação de senha REWORK"
+              redirect="/newLogin"
+              src={ultimasOrdens}
+              alt="pedrinho"
+            />
+          </div>
         </div>
         <Footer hasLogo={false}></Footer>
       </div>

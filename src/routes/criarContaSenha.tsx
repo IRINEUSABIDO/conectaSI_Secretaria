@@ -1,12 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Button_Input } from "../components/buttonInput";
-import { Button_cpf } from "../components/buttonCPF";
+import { createFileRoute } from "@tanstack/react-router";
+import { Button_password } from "../components/buttonPassword";
 import ConectaSeinfraIcon from "../assets/IconsNewSvgs/ConectaSeinfra.svg";
 import LogoPrefeitura from "../assets/IconsNewSvgs/LogoPrefeitura.svg";
 import pinkLine from "../assets/IconsNewSvgs/pinkLine.svg";
 import yellowLine from "../assets/IconsNewSvgs/yellowLine.svg";
 
-export const Route = createFileRoute("/criarConta")({
+export const Route = createFileRoute("/criarContaSenha")({
   component: RouteComponent,
 });
 
@@ -28,26 +27,22 @@ function RouteComponent() {
             </h1>
           </div>
         </header>
-
         {/* MAIN */}
         <main className="mt-[2%]">
-          <div className="flex flex-col justify-center items-center ">
-            {/* BOTÕES: COMPONENTES */}
-            <Button_Input type="text" title="Nome" />
-            <Button_Input type="tel" title="Telefone" />
-            <Button_cpf title="CPF" />
+          <div className="flex flex-col justify-center items-center">
+            {/* BOTÕES COMPONENTES */}
+            <Button_password title="Senha" hasPassword={true} />
+            <Button_password title="Confirmar Senha" hasPassword={true} />
 
             <button className="bg-header-blue w-[80vw] sm:w-auto sm:px-46 py-4 rounded-3xl text-white font-bold cursor-pointer">
-              <Link to="/criarContaSenha">
-                <h1>Continuar</h1>
-              </Link>
+              <h1>Entrar</h1>
             </button>
           </div>
         </main>
 
         {/* FOOTER */}
         <footer className="flex items-cente justify-center flex-col">
-          <div className="flex items-center justify-center mt-[5%] mb-[5%] space-x-32">
+          <div className="flex items-center justify-center mt-[15%] mb-[5%] space-x-32">
             <img src={ConectaSeinfraIcon} alt="Logo do Conecta Seinfra" />
             <img src={LogoPrefeitura} alt="LogoPrefeitura de Nova Russas" />
           </div>
